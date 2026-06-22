@@ -12,6 +12,8 @@ Local text-to-speech and voice cloning on Apple Silicon using [Qwen3-TTS](https:
 ```sh
 git clone <repo-url>
 cd qwen3-tts
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -e .
 ```
 
