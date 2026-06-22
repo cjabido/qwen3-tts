@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qwen3-tts"
+version = "0.1.0"
+description = "Local TTS and voice cloning on Apple Silicon via Qwen3-TTS and MLX"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "transformers>=5.0.0rc1",
+    "mlx-audio @ https://github.com/Blaizzy/mlx-audio/archive/9349644.tar.gz",
+    "click",
+    "numpy",
+    "soundfile",
+    "huggingface_hub",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["q3tts"]
+
+[project.scripts]
+q3tts   = "q3tts.tts:main"
+q3clone = "q3tts.clone:main"
+q3setup = "q3tts.setup:main"
+q3batch = "q3tts.batch:main"

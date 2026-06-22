@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+
+# macOS
+.DS_Store
+
+# Generated audio
+*.wav
+*.aup3
+*.m4a
+
+# Working directories
+output*/
+targets/
