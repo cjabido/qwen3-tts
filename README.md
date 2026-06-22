@@ -9,18 +9,26 @@ Local text-to-speech and voice cloning on Apple Silicon using [Qwen3-TTS](https:
 
 ## Install
 
+Requires [uv](https://docs.astral.sh/uv/). Install it if you don't have it:
+
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Then install the tools globally — no venv activation needed:
+
 ```sh
 git clone <repo-url>
 cd qwen3-tts
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
+uv tool install .
 ```
 
-Or with uv:
+This adds `q3tts`, `q3clone`, `q3setup`, and `q3batch` to `~/.local/bin` and they work from any directory immediately.
+
+If you plan to modify the source, install in editable mode so changes take effect without reinstalling:
 
 ```sh
-uv pip install -e .
+uv tool install --editable .
 ```
 
 ## First-time setup
@@ -107,5 +115,5 @@ See `example_jobs.csv` for a sample.
 
 1. On a machine **with** internet: `q3setup`
 2. Copy `~/.cache/huggingface/` to the target Mac
-3. Install the package: `pip install -e .`
+3. Install the package: `uv tool install .`
 4. Commands work offline immediately
