@@ -1,0 +1,3 @@
+voice,speed,temp,transcript,text
+sample.wav,1.0,0.9,"Hello, this is a test recording.",Hello world — this is a cloned voice.
+sample.wav,0.9,0.6,"Hello, this is a test recording.","A slower, more controlled delivery."
